@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini MSPaint</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 10px;
+      font-family: sans-serif;
+    }
+    canvas {
+      width: 100%;
+      height: auto;
+      border: 1px solid black;
+      touch-action: none;
+    }
+    #controls {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🖌️ Mini MSPaint</h1>
+  <canvas id="canvas"></canvas>
+
+  <div id="controls">
+    <label for="color">🎨 Farbe:</label>
+    <input type="color" id="color" value="#000000">
+    <button onclick="save()">💾 Speichern</button>
+    <button onclick="download()">⬇️ Download</button>
+    <button onclick="clearCanvas()">🧹 Löschen</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
